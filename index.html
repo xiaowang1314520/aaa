@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="
+	width=device-width,initial-scale=1.0,user-scalable=0,maximum-scale=1.0">
+	<style type="text/css">
+		#div1{
+			width:200px;
+			height:200px;
+			background: red;
+			margin:100px auto;
+
+		}
+	</style>
+	<script src="hammer.js"></script>
+	<script type="text/javascript">
+	
+	window.onload=function(){
+
+		var oDiv = document.getElementById('div1');
+		var h = new Hammer(oDiv);
+		var x=0;
+		var y=0;
+		// h.get('pinch').set({enable:true});
+		h.on('pan',function(ev){
+			console.log(ev);
+			oDiv.style.	WebkitTransform='translate('+ev.deltaX+'px,'+ev.deltaY+'px)';
+		})
+	};
+
+
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
